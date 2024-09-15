@@ -1,0 +1,7 @@
+django
+psycopg2-binary
+PyJWT
+requests
+channels
+channels-redis
+daphne

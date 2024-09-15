@@ -1,0 +1,276 @@
+[
+    {
+        "model": "api.Role",
+        "pk": 1,
+        "fields": {
+            "name": "admin"
+        }
+    },
+    {
+        "model": "api.Role",
+        "pk": 2,
+        "fields": {
+            "name": "delivery"
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 1,
+        "fields": {
+            "name": "Mar\u00eda L\u00f3pez",
+            "email": "maria@test.com",
+            "password": "pbkdf2_sha256$600000$dG4zx6PFmp4lqbmF0PxJw6$E8hE+1f5gqw+vLSMxmZDB/Xqghg2/PdSLT1eKjQ3XrU=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 2,
+        "fields": {
+            "name": "Carlos Garc\u00eda",
+            "email": "carlos@test.com",
+            "password": "pbkdf2_sha256$600000$PYSzOgWOfANBjgLM1li99h$zRKVKh1NRa4nQrOK1MvwnugWg6SCV7Er9whTt6EhjBs=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 3,
+        "fields": {
+            "name": "Ana Fern\u00e1ndez",
+            "email": "ana@test.com",
+            "password": "pbkdf2_sha256$600000$0W41p8Tvo7LkC72JAMmkOo$MDBjpujw437V4BI2ddIUysBvj0KRW8YmPPLHJy36sqE=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 4,
+        "fields": {
+            "name": "Juan Mart\u00ednez",
+            "email": "juan@test.com",
+            "password": "pbkdf2_sha256$600000$0kDhEsZjJMPI2rbKtfI7us$H8sRGfVT1ols0B1+NESIlEXj8S0UcsEtmniG+jxcsJA=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 5,
+        "fields": {
+            "name": "Laura S\u00e1nchez",
+            "email": "laura@test.com",
+            "password": "pbkdf2_sha256$600000$CMF6ff1HAIG7VknxTxcaur$SyKXaGn/8fqcaxX4PzsJmUnDaHyqq2n7Op2P5QlJzwY=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 6,
+        "fields": {
+            "name": "Pedro G\u00f3mez",
+            "email": "pedro@test.com",
+            "password": "pbkdf2_sha256$600000$VfYTyDyGVuHSNRcQWT0UI2$aHaD967H+CWbQPguKWK7xZhni3VB8qZ64KRHXrp/XAI=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 7,
+        "fields": {
+            "name": "Elena Rodr\u00edguez",
+            "email": "elena@test.com",
+            "password": "pbkdf2_sha256$600000$4VMx0jFSQhFIXfvCIWjAI3$2fPCRL2Eia5FByJMBaPfc7GPYMBtjAq0QmeHvooWVUs=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 8,
+        "fields": {
+            "name": "Jorge P\u00e9rez",
+            "email": "jorge@test.com",
+            "password": "pbkdf2_sha256$600000$P4OEOQyl3kEEPtwEyBoGmQ$XpTO3rmSHd8gVuUyjKpjyaL9ewHHte19F/AQCNUy8d8=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 9,
+        "fields": {
+            "name": "Sof\u00eda Morales",
+            "email": "sofia@test.com",
+            "password": "pbkdf2_sha256$600000$KpZi7nlhgDmVSZtODkVoE9$3toLA6r48sn1ovx8aigynb+1rumxAi/YR6OFVTzFBxI=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 10,
+        "fields": {
+            "name": "Daniel Castillo",
+            "email": "daniel@test.com",
+            "password": "pbkdf2_sha256$600000$moJA6DAzxzu4F3HeYiE95d$5BJHIu8ngjdNd/nuD1c2PeC6cSLHQnaqDlLgU0IJJaw=",
+            "role_id": 2
+        }
+    },
+    {
+        "model": "api.User",
+        "pk": 11,
+        "fields": {
+            "name": "admin",
+            "email": "admin@test.com",
+            "password": "pbkdf2_sha256$600000$yQzKKFVnqImSWscHOwsCm3$wpJ8tS/OuhoVgQnd8ER1nHK4cWyZNbXNpBA5MZKR3as=",
+            "role_id": 1
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 101,
+        "fields": {
+            "user_id": 1
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 102,
+        "fields": {
+            "user_id": 2
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 103,
+        "fields": {
+            "user_id": 3
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 104,
+        "fields": {
+            "user_id": 4
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 105,
+        "fields": {
+            "user_id": 5
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 106,
+        "fields": {
+            "user_id": 6
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 107,
+        "fields": {
+            "user_id": 7
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 108,
+        "fields": {
+            "user_id": 8
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 109,
+        "fields": {
+            "user_id": 9
+        }
+    },
+    {
+        "model": "api.Delivery",
+        "pk": 110,
+        "fields": {
+            "user_id": 10
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0001",
+        "fields": {
+            "name": "Moneda",
+            "price": 1.0
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0002",
+        "fields": {
+            "name": "Estuche para gafas",
+            "price": 8.0
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0003",
+        "fields": {
+            "name": "Peque\u00f1o espejo de bolsillo",
+            "price": 5.0
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0004",
+        "fields": {
+            "name": "Pendrive",
+            "price": 12.0
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0005",
+        "fields": {
+            "name": "Tarjeta SIM",
+            "price": 3.0
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0006",
+        "fields": {
+            "name": "Adaptador de corriente",
+            "price": 10.0
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0007",
+        "fields": {
+            "name": "Tijeras peque\u00f1as",
+            "price": 4.0
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0008",
+        "fields": {
+            "name": "Pila de bot\u00f3n",
+            "price": 2.5
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0009",
+        "fields": {
+            "name": "Goma de borrar",
+            "price": 0.5
+        }
+    },
+    {
+        "model": "api.Product",
+        "pk": "pk0010",
+        "fields": {
+            "name": "Clip sujetapapeles",
+            "price": 0.2
+        }
+    }
+]

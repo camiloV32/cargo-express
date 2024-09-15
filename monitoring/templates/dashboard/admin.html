@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <!-- Métricas de ventas título -->
+        <h1 class="text-center">Métricas de Ventas</h1>
+
+        <!-- Mostrar el email del usuario autenticado -->
+        <div class="alert alert-info" role="alert">
+            <strong>Usuario: </strong> {{ user_email }}
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Producto más vendido -->
+        <div class="col-md-6">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Producto más vendido</div>
+                <div class="card-body">
+                    <h5 class="card-title" id="mostSoldProductName"></h5>
+                    <p class="card-text">Cantidad vendida: <span id="mostSoldProductQuantity"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delivery con más pedidos -->
+        <div class="col-md-6">
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">Delivery con más pedidos</div>
+                <div class="card-body">
+                    <h5 class="card-title" id="topDeliveryName"></h5>
+                    <p class="card-text">Total de pedidos: <span id="topDeliveryOrders"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventas por producto (Tabla o gráfica) -->
+    <div class="card text-dark bg-light mb-4">
+        <div class="card-header">Total de ventas por producto</div>
+        <div class="card-body">
+            <canvas id="salesChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <!-- Ingresos totales por producto -->
+    <div id="revenueCardsContainer">
+        <h3>Ventas totales por producto</h3>
+        <!-- Loop para cada producto -->
+        <div class="row" id="revenueCards">
+            <!-- Tarjetas de ingresos generadas por el script -->
+        </div>
+    </div>
+</div>
+
+<script src="{% static '/js/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static '/js/dashboard.js' %}"></script>
+{% endblock %}
