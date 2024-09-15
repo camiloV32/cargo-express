@@ -164,3 +164,9 @@ bidireccional entre el servidor y el cliente, y Redis como base de datos en memo
 **Respuesta del servidor:**
 * **Cuerpo de la respuesta:** Renderiza la página de administración (`dashboard/admin`) con el correo electrónico del usuario autenticado.
 
+## Preguntas teóricas
+### ¿Qué recomendaciones le darías para que pueda garantizar su operación?
+Estar monitoreando constantemente los servicios cloud en los que se va a desplegar esta aplicación ya que si hay mucha demanda de recursos es posible que el servidor se vea afectado en rendimiento e incluso podria provocar errores por no ser capaz de procesar las solicitudes, tambien se recomiendaquew se configure el servidor para que gradualmente responda a la demanda de recursos (Auto Scaling)
+
+### ¿La solución planteada se encuentra en la capacidad de responder la demanda durante los próximos dos años?
+Con un monitoreo de los servicios desplegados en la nube para este desarrollo (Amazon ElastiCache, RDS y Amazon Elastic Beanstalk) y siguiendo las recomendaciones anteriores se encuentra en la capacidad de responder a la demanda sin embargo seri lo ideal realizar diferentes pruebas de la solución como lo son pruebas de estres para resolver posibles problemas que se producción o ver como se comportan los diferentes servicios frente a ciertos escenarios. 
