@@ -81,4 +81,86 @@ en tiempo real, esto se logra combinando Django y Redis (Base de datos en memori
 ## Arquitectura del proyecto
 Este proyecto se encuentra construido con django y cuenta con 2 aplicaciones, la primera para registrar los pedidos y verificar que el repartidor esta registrado en la base de datos,
 la segunda contiene un login que de acceso a un panel en el que podemos observar diferentes metricas de los pedidos en tiempo cercano al real mediante WebSockets, que permite una comunicación 
-bidireccional entre el servidor y el cliente, y Redis como base de datos en memoria para almacenar datos de manera rápida y eficiente. De esta manera, el dashboard puede mostrar información actualizada instantáneamente
+bidireccional entre el servidor y el cliente, y Redis como base de datos en memoria para almacenar datos de manera rápida y eficiente. De esta manera, el dashboard puede mostrar información actualizada instantáneamente.
+
+## Rutas
+
+**Endpoint:** `/api/obtener_token_delivery/`
+
+**Método:** `POST`
+
+**Encabezado de la petición:**
+* **Body:** Debe contener los siguientes campos:
+	+ **IdRepartidor:** Un entero (`int`) que representa el ID del repartidor.
+	+ **Nombre:** Una cadena de texto (`string`) que representa el nombre del repartidor.
+
+**Respuesta del servidor:**
+* **Código de estado:** `200 OK` si la petición es exitosa.
+* **Cuerpo de la respuesta:** Un objeto JSON con los siguientes campos:
+	+ **token:** Una cadena de texto (`string`) que representa el token de autenticación.
+	+ **message:** Una cadena de texto (`string`) con el mensaje "Ok" que indica que la petición fue exitosa.
+
+***
+
+**Endpoint:** `/api/registrar_pedido_entregado/`
+
+**Método:** `POST`
+
+**Encabezado de la petición:**
+* **Headers:** Debe contener el siguiente campo:
+	+ **Authorization:** Una cadena de texto (`string`) que representa el token de autenticación obtenido en `/api/obtener_token_delivery/`
+* **Body:** Debe contener los siguientes campos:
+	+ **pedido_id:** Una cadena de texto (`string`) que representa el ID del pedido.
+	+ **repartidor:** Un objeto con los siguientes campos:
+		- **IdRepartidor:** Un entero (`int`) que representa el ID del repartidor.
+		- **Nombre:** Una cadena de texto (`string`) que representa el nombre del repartidor.
+	+ **productos:** Un arreglo de objetos con los siguientes campos:
+		- **IdProducto:** Una cadena de texto (`string`) que representa el ID del producto.
+		- **producto:** Una cadena de texto (`string`) que representa el nombre del producto.
+		- **precio:** Un número flotante (`float`) que representa el precio del producto.
+	+ **timestamp:** Una cadena de texto (`string`) que representa la marca de tiempo.
+
+**Respuesta del servidor:**
+* **Código de estado:** `201 Created` si la petición es exitosa.
+* **Cuerpo de la respuesta:** Un objeto JSON con los siguientes campos:
+	+ **message:** Una cadena de texto (`string`) con el mensaje "Create".
+	+ **id_orden:** Una cadena de texto (`string`) que representa el ID de la orden.
+	+ **products:** Un arreglo de objetos que representan los productos creados.
+
+***
+
+**Endpoint:** `/dashboard/login/`
+
+
+#### POST
+
+**Encabezado de la petición:**
+* **Body:** Debe contener los siguientes campos:
+	+ **username:** Una cadena de texto (`string`) que representa el correo electrónico del usuario.
+	+ **password:** Una cadena de texto (`string`) que representa la contraseña del usuario.
+
+**Respuesta del servidor:**
+* **Cuerpo de la respuesta:** Redirige al usuario a la página de administración (`/dashboard/admin/`).
+
+
+#### GET
+
+**Respuesta del servidor:**
+* **Código de estado:** `200 OK`
+* **Cuerpo de la respuesta:** Renderiza la página de login (`dashboard/login`).
+
+***
+
+**Endpoint:** `/dashboard/admin`
+
+**Método:** `POST`
+
+**Requisitos de autenticación:**
+* El usuario debe estar autenticado.
+
+**Parámetros de la petición:**
+* Ninguno.
+
+**Respuesta del servidor:**
+* **Cuerpo de la respuesta:** Renderiza la página de administración (`dashboard/admin`) con el correo electrónico del usuario autenticado.
+
